@@ -83,4 +83,6 @@ const AboutMeComponent = (props: aboutMeComponentProps_t) => {
   );
 };
 
-export default AboutMeComponent;
+const MemoizedAboutMe = React.memo(AboutMeComponent);
+
+export default MemoizedAboutMe;

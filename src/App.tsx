@@ -1,29 +1,19 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { HomePage } from "./pages";
 import { ThemeContext, colorPallette, pageData_t } from "./utils/context";
 import { GlobalStyles, ThemeProvider, createTheme } from "@mui/material";
 
 function App() {
-  const [theme, setTheme] = React.useState<string>("light");
-  const landingPage: pageData_t = {
-    title: "Landing",
-    path: "/",
-    element: <Navigate to="/home" />,
-  };
+  const [theme, setTheme] = React.useState<string>("dark");
 
   const homePage: pageData_t = {
     title: "Home",
-    path: "/home",
+    path: "/",
     element: <HomePage />,
   };
-  const pages: pageData_t[] = [landingPage, homePage];
+  const pages: pageData_t[] = [homePage];
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

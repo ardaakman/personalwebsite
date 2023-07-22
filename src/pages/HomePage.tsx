@@ -8,11 +8,14 @@ import {
 import { Box } from "@mui/material";
 import styled from "@emotion/styled";
 import { CustomAppBar } from "../components/CustomAppBar";
-import { Carousel, AboutMeComponent, ContactForm } from "../components";
+import { Carousel, ContactForm } from "../components";
 import profilePhoto from "../blobs/profile.jpg";
-import Experiences from "./Experiences";
-import Projects from "./Projects";
-import { Academics } from "./Academics";
+import {
+  MemoizedAboutMe,
+  MemoizedAcademics,
+  MemoizedExperiences,
+  MemoizedProjects,
+} from "./";
 
 export default function HomePage() {
   const [flickityIndex, setFlickityIndex] = React.useState<number>(
@@ -51,10 +54,10 @@ export default function HomePage() {
     <ThemedBox>
       <CustomAppBar />
       <Carousel {...carouselProps} />
-      {flickityIndex === 0 && <AboutMeComponent {...aboutMeProps} />}
-      {flickityIndex === 1 && <Experiences {...experiencesProps} />}
-      {flickityIndex === 2 && <Projects {...experiencesProps} />}
-      {flickityIndex === 3 && <Academics {...experiencesProps} />}
+      {flickityIndex === 0 && <MemoizedAboutMe {...aboutMeProps} />}
+      {flickityIndex === 1 && <MemoizedExperiences {...experiencesProps} />}
+      {flickityIndex === 2 && <MemoizedProjects {...experiencesProps} />}
+      {flickityIndex === 3 && <MemoizedAcademics {...experiencesProps} />}
       <ContactForm theme={theme} />
     </ThemedBox>
   );

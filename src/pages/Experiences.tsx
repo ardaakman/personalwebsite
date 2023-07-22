@@ -221,4 +221,6 @@ function Experiences(props: experiencesProps_t) {
   );
 }
 
-export default Experiences;
+const MemoizedExperiences = React.memo(Experiences);
+
+export default MemoizedExperiences;

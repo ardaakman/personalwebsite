@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { colorPallette, experiencesProps_t } from "../utils/context";
 import { owloLogo } from "../blobs";
 import { FlipCard } from "./Experiences";
+import * as React from "react";
 
 function Projects(props: experiencesProps_t) {
   const { theme } = props;
@@ -90,4 +91,5 @@ function Projects(props: experiencesProps_t) {
   );
 }
 
-export default Projects;
+const MemoizedProjects = React.memo(Projects);
+export default MemoizedProjects;

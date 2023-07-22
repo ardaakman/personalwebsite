@@ -1,5 +1,6 @@
 import { Link, Typography, Card, CardContent, Box } from "@mui/material";
 import { AcademicsProps_t, colorPallette } from "../utils/context";
+import * as React from "react";
 
 interface CustomCardProps_t {
   title: string;
@@ -48,7 +49,7 @@ function CustomCard(props: CustomCardProps_t) {
   );
 }
 
-export function Academics(props: AcademicsProps_t) {
+function Academics(props: AcademicsProps_t) {
   const data = [
     {
       title: "Data Structures",
@@ -135,3 +136,6 @@ export function Academics(props: AcademicsProps_t) {
     </div>
   );
 }
+
+const MemoizedAcademics = React.memo(Academics);
+export default MemoizedAcademics;
