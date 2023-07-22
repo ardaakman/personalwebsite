@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Button,
-  styled,
-} from "@mui/material";
+import { AppBar, Toolbar, IconButton, Button, styled } from "@mui/material";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { ThemeContext, colorPallette, redirectToUrl } from "../utils/context";
 

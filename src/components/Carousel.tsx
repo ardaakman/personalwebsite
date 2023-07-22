@@ -4,7 +4,6 @@ import "flickity/css/flickity.css";
 import { Box, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { carouselProps_t, colorPallette } from "../utils/context";
-import AboutMeComponent from "../pages/AboutMe";
 
 const Carousel: React.FC<carouselProps_t> = (props: carouselProps_t) => {
   const { theme, slides, flickityIndex, setFlickityIndex } = props;
