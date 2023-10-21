@@ -38,9 +38,7 @@ function Projects(props: experiencesProps_t) {
         ],
       },
       icon: null,
-      link: "https://github.com/Eclipse-Sports/f1dashboard",
     },
-    {
     {
       title: "Sports Eclipse",
       subtitle:
