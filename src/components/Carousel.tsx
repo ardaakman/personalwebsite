@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import React, { useEffect, useRef } from "react";
 import Flickity from "flickity";
 import "flickity/css/flickity.css";
@@ -7,6 +8,8 @@ import { carouselProps_t, colorPallette } from "../utils/context";
 
 const Carousel: React.FC<carouselProps_t> = (props: carouselProps_t) => {
   const { theme, slides, flickityIndex, setFlickityIndex } = props;
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   const ThemedTypography = styled(Typography)(() => ({
     color: theme === "dark" ? colorPallette.light : colorPallette.dark,
     margin: "0 3em 0 3em",
@@ -27,15 +30,19 @@ const Carousel: React.FC<carouselProps_t> = (props: carouselProps_t) => {
   const StyledFlickity = styled.div`
     .flickity-button {
       top: 50% !important;
-      transform: translateY(-50%);
+      transform: translateY(-50%) !important;
+      z-index: 1;
     }
 
     .flickity-prev-next-button {
-      width: 50px;
-      height: 50px;
       background: ${theme === "dark"
         ? colorPallette.light
         : colorPallette.dark};
+
+      @media (max-width: 600px) {
+        width: 25px; // Decreased for mobile
+        height: 25px; // Decreased for mobile
+      }
     }
 
     .flickity-prev-next-button:hover {
@@ -102,8 +109,8 @@ const Carousel: React.FC<carouselProps_t> = (props: carouselProps_t) => {
         className="carousel"
         ref={carouselRef}
         style={{
-          width: "50%",
-          height: "50%",
+          width: isMobile ? "90%" : "50%", // Adjust width based on screen size
+          height: isMobile ? "40%" : "50%", // Adjust height based on screen size
           margin: "auto",
           marginBottom: "3em",
           marginTop: "4em",

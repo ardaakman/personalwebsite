@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { styled } from "@mui/system";
 import { colorPallette, contactMeComponents_t } from "../utils/context";
 
@@ -7,6 +13,8 @@ const ContactForm = (props: contactMeComponents_t) => {
   const { theme } = props;
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+
+  const isMobile = useMediaQuery("(max-width:600px)"); // Checking if the screen width is <= 600px
 
   const ThemedTypography = React.useMemo(
     () =>
@@ -28,14 +36,13 @@ const ContactForm = (props: contactMeComponents_t) => {
         justifyContent: "center",
         backgroundColor:
           theme === "dark" ? colorPallette.black : colorPallette.white,
+        padding: isMobile ? "1em" : "0",
       })),
-    [theme]
+    [theme, isMobile]
   );
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // No need to get values from the DOM directly,
-    // they are already available in the state variables
     window.location.href = `mailto:ardaakman96@gmail.com?subject=${subject}&body=${message}`;
   };
 
@@ -44,7 +51,7 @@ const ContactForm = (props: contactMeComponents_t) => {
       <Box
         sx={{
           color: theme === "dark" ? colorPallette.light : colorPallette.dark,
-          width: "50%",
+          width: isMobile ? "90%" : "50%", // Adjust width based on screen size
           height: "80%",
           display: "flex",
           flexDirection: "column",

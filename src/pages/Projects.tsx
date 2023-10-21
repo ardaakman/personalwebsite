@@ -24,6 +24,24 @@ function Projects(props: experiencesProps_t) {
       link: "https://www.owlo.co/",
     },
     {
+      title: "Image Processing and Computational Photography Projects",
+      subtitle:
+        "Worked on various projects in image processing and computational photography.",
+      date: "August 2023 - Present",
+      description: {
+        Main: "Various projects, ranging from mosaic creation, image warping, image stitching, and feature matching.",
+        BulletPoints: [
+          "Aligning color channels: https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj1/arda.akman",
+          "Image gradients, image sharpening, image blending: https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj2/arda.akman",
+          "Image warping, mean faces: https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj3/arda.akman",
+          "Image stitching: https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj4A/arda.akman",
+        ],
+      },
+      icon: null,
+      link: "https://github.com/Eclipse-Sports/f1dashboard",
+    },
+    {
+    {
       title: "Sports Eclipse",
       subtitle:
         "Co-creator, making Formula 1 statistics more fun and accesible.",
