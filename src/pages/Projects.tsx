@@ -38,6 +38,7 @@ function Projects(props: experiencesProps_t) {
         ],
       },
       icon: null,
+      link: "https://inst.eecs.berkeley.edu/~cs180/fa23/upload/files/proj4A/arda.akman",
     },
     {
       title: "Sports Eclipse",
