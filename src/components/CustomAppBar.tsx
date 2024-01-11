@@ -32,7 +32,7 @@ export function CustomAppBar() {
         <StyledTextButton
           onClick={() =>
             redirectToUrl(
-              "https://drive.google.com/file/d/1A-1yHAhdyr3fo5MvUpb3OxLl93ZC3xor/view?usp=sharing"
+              "https://drive.google.com/file/d/102e4wakH1fa4iGz1i7mHFZtgbj9AykCW/view?usp=sharing"
             )
           }
           variant="text"
